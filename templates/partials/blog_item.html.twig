@@ -1,0 +1,96 @@
+{% set feed_url = blog.url == '/' or blog.url == base_url_relative ? (base_url_relative~'/'~blog.slug) : blog.url %}
+{% set new_base_url = blog.url == '/' ? '' : blog.url %}
+
+<div class="list-item">
+{% if theme_var('show_blog_header_image') %}
+    {% set header_image = page.header.header_image|defined(true) %}
+    {% set header_image_width  = page.header.header_image_width|defined(900) %}
+    {% set header_image_height = page.header.header_image_height|defined(300) %}
+    {% set header_image_file = page.header.header_image_file %}
+{% endif %}
+
+  <div class="list-blog-header">
+    <div class="list-blog-title">
+    <h4><a href="{{ page.url }}">{{ page.title }}</a></h4>
+    </div>
+
+    <div class="list-blog-date">
+    Blog URL: {{ blog.url }}
+    Base URL: {{ base_url }}
+    NEW Base URL: {{ new_base_url }}
+    Absolute URL: {{ base_url_absolute }}
+    Posted on {{ page.date|date("d M Y") }} by <a href="{{ blog.url }}about">
+		  {% if page.author %}
+		    {{ page.author }}
+		  {% else %}
+		    {{ config.site.author.name }}
+		  {% endif %}
+      </a> in
+      {% if page.taxonomy.category %}
+	     {% for cat in page.taxonomy.category %}
+       <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
+       {% endfor %}
+      {% else %}
+      Uncategorized
+      {% endif %}
+      </div>
+
+  <hr class="hr-blog-item">
+
+
+  </div>
+
+<div class="list-blog-padding">
+{{ page.content|raw }}
+</div>
+
+<div class="list-blog-footer">
+<hr class="hr-blog-item">
+
+<i class="fa fa-calendar" title="Date"></i>
+<span class="tags">
+  <a href="{{ blog.url }}archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("M_Y")|lower }}">{{ page.date|date("d/m/Y") }}</a>
+</span>
+
+<i class="fa fa-file-text" title="Category"></i>
+{% if page.taxonomy.category %}
+	<span class="tags">
+    {% for cat in page.taxonomy.category %}
+        <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
+    {% endfor %}
+    </span>
+{% else %}
+    Uncategorized
+{% endif %}
+
+<i class="fa fa-tags" title="TAGs"></i>
+{% if page.taxonomy.tag %}
+    <span class="tags">
+    {% for tag in page.taxonomy.tag|sort %}
+    <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+    </span>
+{% else %}
+    No TAGs
+{% endif %}
+
+<i class="fa fa-envelope-o" aria-hidden="true" title="Write to the author"></i>
+<span class="tags"><a href="mailto:{{ theme_var('write_author') }}?subject={{ page.title }}">Write to the author</a></span>
+
+<i class="fa fa-bullhorn" aria-hidden="true" title="Suggest the post"></i>
+<span class="tags"><a href="mailto:?subject={{ page.title }}&body={{ base_url_absolute }}/{{ page.url }}"> Suggest the post</a></span>
+
+
+</div>
+
+<div>
+{% if config.plugins.comments.enabled %}
+    {% include 'partials/comments.html.twig' with {'page': page} %}
+{% endif %}
+</div>
+
+<div>
+<div class="back-to-top-small"> <a href="#"><i class="fa fa-chevron-up"></i></a></div>
+</div>
+
+</div>

@@ -1,0 +1,24 @@
+// Footer styling
+#footer {
+	position: absolute;
+	background: $footer-bg;
+	color: $footer-text;
+	height: $footer-height;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	@extend .padding-horiz;
+	text-align: center;
+
+	a:hover {
+		color: $text-highlight;
+	}
+
+	p {
+		@extend %vertical-align;
+		margin: 0;
+		.fa {
+			color: $text-highlight;
+		}
+	}
+}

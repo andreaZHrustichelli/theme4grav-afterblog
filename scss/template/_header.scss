@@ -1,0 +1,191 @@
+// Header styling
+
+#header {
+	@extend .padding-horiz;
+	padding-top: 0.5rem;
+	padding-bottom: 1rem;
+	background-color: $header-bg;
+	@include clearfix;
+
+	.logo-surround {
+		position: relative;
+		float: left;
+	}
+
+	#logo {
+		background: $logo-image;
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		display: block;
+		width: 255px;
+		height: 50px;
+		z-index: 2;
+		position: relative;
+		@include breakpoint(desktop-range) {
+			width: 220px;
+			background-size: 220px;
+		}
+	}
+
+	.logo-accent {
+		position: absolute;
+		z-index: 1;
+		width: 36px;
+		height: 36px;
+		top: 14px;
+		left: 219px;
+		border-radius: 100%;
+		background: $logo-accent;
+		@include breakpoint(desktop-range) {
+			width: 30px;
+			height: 30px;
+			top: 13px;
+			left: 190px;
+		}
+	}
+
+	#navbar {
+		font-size: $core-font-size - 0.3rem;
+		font-family: $font-family-menu;
+		background: $navbar-bg;
+		float: right;
+		border-radius: $border-radius;
+		margin-top: 0.5rem;
+		@include breakpoint(desktop-only) {
+			background: none;
+			float: none;
+			margin: 0;
+		}
+		ul {
+			display: block;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-transform: uppercase;
+			li {
+				float: left;
+				position: relative;
+
+				> a {
+					display: inline-block;
+					padding: 0 1.2rem;
+					line-height: 2.8rem;
+					color: rgba($navbar-text, 0.8);
+					border-right: 1px solid darken($navbar-bg, 8%);
+					@include breakpoint(desktop-range) {
+						padding: 0 0.8rem;
+					}
+					&:after {
+						font-family: $icons;
+						content: "\f107";
+						float: right;
+						margin-left: 5px;
+					}
+					&:only-child:after {
+						content: '';
+						display: none;
+					}
+				}
+
+				&:first-child {
+					a {
+						border-radius: $border-radius 0 0 $border-radius;
+					}
+				}
+
+				&:last-child {
+					a {
+						border-right: 0;
+						border-radius: 0 $border-radius $border-radius 0;
+					}
+				}
+
+				&.active {
+					> a {
+						background: $navbar-bg-active;
+						color: $navbar-text;
+						font-weight: bold;
+					}
+				}
+				&:hover {
+					> a {
+						background: $navbar-bg-active;
+						color: $navbar-text;
+					}
+					> ul {
+						display: list-item;
+					}
+				}
+
+			}
+			@include breakpoint(desktop-only) {
+				display: none;
+			}
+			ul {
+				display: none;
+				position: absolute;
+				top: 100%;
+				background: $core-accent;
+				border-radius: $border-radius;
+				text-transform: none;
+				font-size: $core-font-size - 0.2rem;
+				li {
+					float: none;
+					position: relative;
+					a {
+						width: $dropdown-width;
+						border: 0;
+						border-radius: 0;
+						color: $white;
+						&:after {
+							font-family: $icons;
+							content: "\f105";
+							float: right;
+						}
+						&:only-child:after {
+							content: '';
+							display: none;
+						}
+					}
+					&:first-child {
+						a {
+							border-radius: $border-radius $border-radius 0 0;
+						}
+					}
+					&:last-child {
+						a {
+							border-radius: 0 0 $border-radius $border-radius;
+						}
+					}
+					&.active {
+						> a {
+							background: lighten($core-accent, 10%);
+							font-weight: normal;
+						}
+					}
+					&:hover {
+						> a {
+							background: lighten($core-accent, 10%);
+						}
+					}
+				}
+				ul {
+					left: 100%;
+					top: 0;
+				}
+			}
+		}
+
+		.panel-activation {
+            padding: 1rem;
+			display: none;
+			font-size: 1.8rem;
+			cursor: pointer;
+			float: right;
+			@include breakpoint(desktop-only) {
+				display: inline-block;
+			}
+		}
+
+	}
+}

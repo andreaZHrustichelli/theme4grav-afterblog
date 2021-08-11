@@ -1,0 +1,13 @@
+body {
+	#breadcrumbs {
+		padding-left: 0;
+		a {
+			padding: 0 0.3rem;
+			font-size: $core-font-size - 0.1;
+		}
+		i {
+			width: 10px;
+			margin-left: 5px;
+		}
+	}
+}

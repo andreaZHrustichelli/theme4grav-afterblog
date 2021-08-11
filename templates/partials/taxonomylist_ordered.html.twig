@@ -1,0 +1,17 @@
+{% set taxlist = children_only is defined ? taxonomylist.getChildPagesTags() : taxonomylist.get() %}
+
+{% set array = [] %}
+{% if taxlist %}
+<span class="tags">
+    {% for tax,value in taxlist[taxonomy] %}
+    {% set array = array|merge([{ label: tax, count: value }]) %}
+    {% endfor %}
+
+{% set ord_array = array|sort_by_key('label') %}
+
+    {% for i in ord_array %}
+        <a href="{{ base_url }}{{ taxonomy }}{{ config.system.param_sep }}{{ i.label }}">{{ i.label }} ({{ i.count }})</a>
+    {% endfor %}
+
+</span>
+{% endif %}

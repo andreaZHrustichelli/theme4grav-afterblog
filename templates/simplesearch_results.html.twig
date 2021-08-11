@@ -1,0 +1,37 @@
+{% embed 'partials/base.html.twig' %}
+
+{% block content %}
+		{% if config.plugins.breadcrumbs.enabled %}
+			{% include 'partials/breadcrumbs.html.twig' %}
+		{% endif %}
+
+        {% include 'partials/info_bar.html.twig' %}
+
+<div class="blog-content-item grid pure-g-r">
+            <div id="listing" class="block pure-u-2-3">
+                <div class="list-item">
+
+
+        {% for page in search_results %}
+
+				{% if theme_var('type_of_search_results') == 1  %}
+					{% include 'partials/simplesearch_item.html.twig' with {'page': page} %}
+				{% else %}
+					{% include 'partials/blog_item_short.html.twig' with {'page': page} %}
+				{% endif %}
+
+        {% endfor %}
+
+                </div>
+            </div>
+
+            <div id="sidebar" class="block size-1-3 pure-u-1-3">
+                {% include 'partials/sidebar.html.twig' with {'blog':page}%}
+                {{dump(page.parent)}}
+            </div>
+        </div>
+
+
+{% endblock %}
+
+{% endembed %}

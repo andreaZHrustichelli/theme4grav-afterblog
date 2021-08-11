@@ -1,0 +1,17 @@
+.site-claim {
+  clear: left;
+  margin-left: 0rem;
+}
+
+.back-to-top-small {
+  text-align: center;
+}
+
+#goto_prev {
+  float:right;
+  margin-right:2rem;
+}
+
+#info_bar_right {
+ padding-left: 3rem;
+}

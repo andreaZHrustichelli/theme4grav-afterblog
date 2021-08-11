@@ -1,0 +1,15 @@
+{
+   "project":"grav-theme-afterblog",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "theme":[
+               {
+                  "source":"/",
+                  "destination":"/user/themes/afterburner2"
+               }
+            ]
+         }
+      }
+   }
+}

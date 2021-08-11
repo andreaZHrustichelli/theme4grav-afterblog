@@ -1,0 +1,15 @@
+table {
+	border: 1px solid $core-border-color;
+	table-layout: auto;
+}
+
+th {
+	@extend strong;
+	background: lighten($core-border-color,5%);
+	padding: 0.5rem;
+}
+
+td {
+	padding: 0.5rem;
+	border: $core-border-color; 
+}
