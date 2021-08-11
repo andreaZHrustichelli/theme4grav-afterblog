@@ -1,12 +1,12 @@
 {
-   "project":"grav-theme-afterblog",
+   "project":"theme4grav-afterblog",
    "platforms":{
       "grav":{
          "nodes":{
             "theme":[
                {
                   "source":"/",
-                  "destination":"/user/themes/afterburner2"
+                  "destination":"/user/themes/afterblog"
                }
             ]
          }
