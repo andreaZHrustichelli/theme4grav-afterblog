@@ -4,11 +4,6 @@
 {% if config.plugins.taxonomylist.enabled %}
 <div class="sidebar-content">
     <h4>Categories</h4>
-    Blog URL: {{ blog.url }}
-    Base URL: {{ base_url }}
-    NEW Base URL: {{ new_base_url }}
-    Absolute URL: {{ base_url_absolute }}
-
     {% if theme_var('type_of_categories') == 1  %}
     {% include 'partials/taxonomylist_ordered.html.twig' with {'base_url':blog.url, 'taxonomy':'category'} %}
     {% else %}

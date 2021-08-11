@@ -15,10 +15,6 @@
     </div>
 
     <div class="list-blog-date">
-    Blog URL: {{ blog.url }}
-    Base URL: {{ base_url }}
-    NEW Base URL: {{ new_base_url }}
-    Absolute URL: {{ base_url_absolute }}
     Posted on {{ page.date|date("d M Y") }} by <a href="{{ blog.url }}about">
 		  {% if page.author %}
 		    {{ page.author }}
