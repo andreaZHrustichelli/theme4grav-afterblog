@@ -55,16 +55,101 @@ form:
       validate:
         type: string
 
+    fa_icons_author:
+      type: text
+      label: Font Awesome icon for Author
+      help: Write the FA code for Author
+      validate:
+        type: string
+
+    fa_icons_date:
+      type: text
+      label: Font Awesome icon for Date
+      help: Write the FA code for Author
+      validate:
+        type: string
+
+    fa_icons_category:
+      type: text
+      label: Font Awesome icon for Category
+      help: Write the FA code for Category
+      validate:
+        type: string
+
+    fa_icons_tag:
+      type: text
+      label: Font Awesome icon for TAGs
+      help: Write the FA code for TAGs
+      validate:
+        type: string
+
     write_author:
       type: text
+      size: large
       label: The mail of the author
-      help: The mail of the author. Used in post to write quikly a mail to the author
+      help: The mail of the author. Used in post to write quikly a mail to the Author
+      validate:
+        type: email
+
+    fa_icons_write_author:
+      type: text
+      label: Font Awesome icon for "Write to the Author"
+      help: Write the FA code for "Write to the Author"
+      validate:
+        type: string
+
+    label_write_author:
+      type: text
+      label: Label for "Write to the Author"
+      help: Write the label of button "Write to the Author"
+      validate:
+        type: string
+
+    fa_icons_suggest_post:
+      type: text
+      label: Font Awesome icon for "Suggest the post"
+      help: Write the FA code for "Suggest the post"
+      validate:
+        type: string
+
+    label_suggest_post:
+      type: text
+      label: Label for "Suggest the post"
+      help: Write the label of button "Suggest the post"
+      validate:
+        type: string
+
+    400_error:
+      type: text
+      label: 400 Error message (Bad request)
+      help: Personalized 400 Error message
+      validate:
+        type: string
+
+    401_error:
+      type: text
+      label: 401 Error message (Unauthorized)
+      help: Personalized 401 Error message
+      validate:
+        type: string
+
+    403_error:
+      type: text
+      label: 403 Error message (Forbidden)
+      help: Personalized 403 Error message
       validate:
         type: string
 
     404_error:
       type: text
-      label: 404 Error message
+      label: 404 Error message (Not Found)
       help: Personalized 404 Error message
+      validate:
+        type: string
+
+    500_error:
+      type: text
+      label: 500 Error message (Internal Server Error)
+      help: Personalized 500 Error message
       validate:
         type: string
