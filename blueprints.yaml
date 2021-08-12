@@ -36,21 +36,17 @@ form:
       highlight: 1
       default: 0
       options:
-        0: Disable
-        1: Enable
-      validate:
-        type: bool
+        1: Disable
+        2: Enable
 
     show_blog_content:
       type: toggle
-      label: Sho blog content
+      label: Show blog content
       highlight: 1
       default: 0
       options:
-        0: Disable
-        1: Enable
-      validate:
-        type: bool
+        1: Disable
+        2: Enable
 
     type_of_categories:
       type: toggle

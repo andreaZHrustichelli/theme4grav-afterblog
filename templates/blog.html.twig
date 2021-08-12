@@ -14,7 +14,7 @@
 
 	{% block content %}
 
-{% if theme_var('show_blog_content') %}
+{% if theme_var('show_blog_content') == 2 %}
 <div class="blog-header">
 {{ page.content|raw }}
 </div>
