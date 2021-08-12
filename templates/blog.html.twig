@@ -14,13 +14,11 @@
 
 	{% block content %}
 
-{#
 {% if theme_var('show_blog_content') %}
 <div class="blog-header">
 {{ page.content|raw }}
 </div>
 {% endif %}
-#}
 
 		{% if config.plugins.breadcrumbs.enabled %}
 			{% include 'partials/breadcrumbs.html.twig' %}

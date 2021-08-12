@@ -21,12 +21,12 @@
         </div>
 
         <div class="search-details">
-            <p><i class="fa fa-calendar" title="Date"></i>
+            <p><i class="fa {{ theme_var('fa_icons_date') }}" title="Date"></i>
               <span class="tags">
-                <a href="{{ blog.url }}{{ base_url }}archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("M_Y")|lower }}">{{ page.date|date("d/m/Y") }}</a>
+                <a href="{{ base_url_absolute }}/archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("M_Y")|lower }}|replace({'_': " "})">{{ page.date|date("d/m/Y") }}</a>
               </span>
             </p>
-            <p><i class="fa fa-user" title="Author"></i>
+            <p><i class="fa {{ theme_var('fa_icons_author') }}" title="Author"></i>
               <span class="tags">
                 <a href="{{ blog.url }}{{ base_url }}about">
               {% if page.author %}
@@ -37,7 +37,7 @@
                 </a>
               </span>
             </p>
-            <p><i class="fa fa-file-text" title="Category"></i>
+            <p><i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
               {% if page.taxonomy.category %}
             	<span class="tags">
                 {% for cat in page.taxonomy.category %}
@@ -47,7 +47,7 @@
             {% else %}
                 Uncategorized
             {% endif %}</p>
-            <p><i class="fa fa-tags" title="TAGs"></i>{% if page.taxonomy.tag %}
+            <p><i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>{% if page.taxonomy.tag %}
                 <span class="tags">
                 {% for tag in page.taxonomy.tag|sort %}
                 <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>

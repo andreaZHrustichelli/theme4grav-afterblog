@@ -43,12 +43,12 @@
 <div class="list-blog-footer">
 <hr class="hr-blog-item">
 
-<i class="fa fa-calendar" title="Date"></i>
+<i class="fa {{ theme_var('fa_icons_date') }}" title="Date"></i>
 <span class="tags">
   <a href="{{ blog.url }}archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("M_Y")|lower }}">{{ page.date|date("d/m/Y") }}</a>
 </span>
 
-<i class="fa fa-file-text" title="Category"></i>
+<i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
 {% if page.taxonomy.category %}
 	<span class="tags">
     {% for cat in page.taxonomy.category %}
@@ -59,7 +59,7 @@
     Uncategorized
 {% endif %}
 
-<i class="fa fa-tags" title="TAGs"></i>
+<i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>
 {% if page.taxonomy.tag %}
     <span class="tags">
     {% for tag in page.taxonomy.tag|sort %}
@@ -70,11 +70,11 @@
     No TAGs
 {% endif %}
 
-<i class="fa fa-envelope-o" aria-hidden="true" title="Write to the author"></i>
-<span class="tags"><a href="mailto:{{ theme_var('write_author') }}?subject={{ page.title }}">Write to the author</a></span>
+<i class="fa {{ theme_var('fa_icons_write_author') }}" aria-hidden="true" title="Write to the author"></i>
+<span class="tags"><a href="mailto:{{ theme_var('write_author') }}?subject={{ page.title }}">{{ theme_var('label_write_author') }}</a></span>
 
-<i class="fa fa-bullhorn" aria-hidden="true" title="Suggest the post"></i>
-<span class="tags"><a href="mailto:?subject={{ page.title }}&body={{ base_url_absolute }}/{{ page.url }}"> Suggest the post</a></span>
+<i class="fa {{ theme_var('fa_icons_suggest_post') }}" aria-hidden="true" title="Suggest the post"></i>
+<span class="tags"><a href="mailto:?subject={{ page.title }}&body={{ base_url_absolute }}/{{ page.url }}">{{ theme_var('label_suggest_post') }}</a></span>
 
 
 </div>

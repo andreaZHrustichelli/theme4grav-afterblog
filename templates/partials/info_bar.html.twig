@@ -31,7 +31,7 @@
 {% endif %}
 
 {% if uri.param('archives_month') %}
-  <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i> Post in Archives: {{ uri.param('archives_month') }}
+  <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i> Post in Archives: {{ uri.param('archives_month')|lower|replace({'_': " "}) }}
 {% endif %}
 
 </div>

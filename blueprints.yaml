@@ -30,6 +30,28 @@ form:
       validate:
         type: bool
 
+    show_blog_header_image:
+      type: toggle
+      label: Show blog header image
+      highlight: 1
+      default: 0
+      options:
+        0: Disable
+        1: Enable
+      validate:
+        type: bool
+
+    show_blog_content:
+      type: toggle
+      label: Sho blog content
+      highlight: 1
+      default: 0
+      options:
+        0: Disable
+        1: Enable
+      validate:
+        type: bool
+
     type_of_categories:
       type: toggle
       label: Visualization type for categories
