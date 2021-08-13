@@ -32,8 +32,6 @@
 
 {% if uri.param('archives_month') %}
   <i class="fa fa-chevron-right"></i><i class="fa fa-chevron-right"></i> Post in Archives: {{ uri.param('archives_month')|lower|replace({'_': " "}) }}
-  {% set new_my = date(uri.param('archives_month')) %}
-  {{ new_my.format("F y") }}
 {% endif %}
 
 </div>
