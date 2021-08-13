@@ -2,13 +2,6 @@
 {% set new_base_url = blog.url == '/' ? '' : blog.url %}
 
 <div class="list-item">
-{% if theme_var('show_blog_header_image') == 2 %}
-    {% set header_image = page.header.header_image|defined(true) %}
-    {% set header_image_width  = page.header.header_image_width|defined(900) %}
-    {% set header_image_height = page.header.header_image_height|defined(300) %}
-    {% set header_image_file = page.header.header_image_file %}
-{% endif %}
-
   <div class="list-blog-header">
     <div class="list-blog-title">
     <h4><a href="{{ page.url }}">{{ page.title }}</a></h4>

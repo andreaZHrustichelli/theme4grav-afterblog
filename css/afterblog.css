@@ -15,3 +15,7 @@
 #info_bar_right {
  padding-left: 3rem;
 }
+
+#info_bar_right {
+ height: 10rem;
+}

@@ -30,20 +30,11 @@ form:
       validate:
         type: bool
 
-    show_blog_header_image:
-      type: toggle
-      label: Show blog header image
-      highlight: 1
-      default: 0
-      options:
-        1: Disable
-        2: Enable
-
     show_blog_content:
       type: toggle
       label: Show blog content
-      highlight: 1
-      default: 0
+      highlight: 2
+      default: 1
       options:
         1: Disable
         2: Enable
@@ -72,6 +63,11 @@ form:
       help: String with the claim of the site... Show on the top left
       validate:
         type: string
+
+    section_fa_icons:
+      type: section
+      underline: true
+      title: Icons and Label Configuration
 
     fa_icons_author:
       type: text
@@ -120,6 +116,7 @@ form:
       type: text
       label: Label for "Write to the Author"
       help: Write the label of button "Write to the Author"
+      default: "Write to the author"
       validate:
         type: string
 
@@ -134,8 +131,14 @@ form:
       type: text
       label: Label for "Suggest the post"
       help: Write the label of button "Suggest the post"
+      default: "Suggest the post"
       validate:
         type: string
+
+    section_error:
+      type: section
+      underline: true
+      title: Message error
 
     400_error:
       type: text
