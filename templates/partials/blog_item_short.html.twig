@@ -23,7 +23,7 @@
         <div class="search-details">
             <p><i class="fa {{ theme_var('fa_icons_date') }}" title="Date"></i>
               <span class="tags">
-                <a href="{{ base_url_absolute }}/archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("FM_Y")|lower }}|replace({'_': " "})">{{ page.date|date("d/m/Y") }}</a>
+                <a href="{{ base_url_absolute }}/archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("F_Y")|replace({'_': " "})  }}">{{ page.date|date("d/m/Y") }}</a>
               </span>
             </p>
             <p><i class="fa {{ theme_var('fa_icons_author') }}" title="Author"></i>
