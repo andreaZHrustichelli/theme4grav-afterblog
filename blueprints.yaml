@@ -1,7 +1,7 @@
 name: Afterblog
 slug: afterblog
 type: theme
-version: 1.0.0
+version: 0.8.0
 description: "Afterblog is modern, responsive, and **built for speed**!"
 icon: paper-plane
 author:
@@ -51,7 +51,7 @@ form:
     type_of_search_results:
       type: toggle
       label: Visualization type for search results
-      help: Show categories like Tags or in an unordered list
+      help: Show search result like "Simple Search Plugin" or customized
       default: 1
       options:
         1: "Like Simple Search Plugin"
