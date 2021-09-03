@@ -2,74 +2,80 @@
 {% set new_base_url = blog.url == '/' ? '' : blog.url %}
 
 <section class="search-row">
-    {% set banner = page.media.images|first %}
-
-    {% if banner %}
-        <div class="search-image">
-            <a href="{{ page.url }}">{{ banner.cropZoom(100,100).html|raw }}</a>
-        </div>
-    {% else %}
-        <div class="search-image">
-            <a href="{{ page.url }}">
-            <img src="{{ theme_url }}/images/after_logo_100.png"></img>
-            </a>
-        </div>
-    {% endif %}
-    <div class="search-item">
-        <div class="search-title">
-            <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
-        </div>
-
-        <div class="search-details">
-            <p><i class="fa {{ theme_var('fa_icons_date') }}" title="Date"></i>
-              <span class="tags">
-                <a href="{{ base_url_absolute }}/archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives: {{ page.date|date("F Y") }}">{{ page.date|date("d/m/Y") }}</a>
-              </span>
-            </p>
-            <p><i class="fa {{ theme_var('fa_icons_author') }}" title="Author"></i>
-              <span class="tags">
-                <a href="{{ blog.url }}{{ base_url }}about">
-              {% if page.author %}
-        		    {{ page.author }}
-        		  {% else %}
-        		    {{ config.site.author.name }}
-        		  {% endif %}
-                </a>
-              </span>
-            </p>
-            {% if config.plugins.taxonomylist.enabled %}
-            <p><i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
-              {% if page.taxonomy.category %}
-            	<span class="tags">
-                {% for cat in page.taxonomy.category %}
-                    <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
-                {% endfor %}
-                </span>
-            {% else %}
-                Uncategorized
-            {% endif %}</p>
-            <p><i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>{% if page.taxonomy.tag %}
-                <span class="tags">
-                {% for tag in page.taxonomy.tag|sort %}
-                <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-                {% endfor %}
-                </span>
-            {% else %}
-                No TAGs
-            {% endif %} </p>
-            {% endif %}
-
-            {% if config.plugins.readingtime.enabled %}
-                        <div><span class="item_short_icon"><i class="fa {{ theme_var('fa_icons_readingtime') }}" title="Reading Time"></i></span>
-                         <span class="tags">
-                          <a href="{{ page.url }}">{{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) }}</a>
-                         </span>
-                        </div>
-            {% endif %}
-            <div>
-              <a href="#"><i class="fa fa-chevron-up"></i></a>
-            </div>
-        </div>
-        <hr class="hr-search-result" />
+  {% set banner = page.media.images|first %}
+  {% if banner %}
+    <div class="search-image">
+      <a href="{{ page.url }}">{{ banner.cropZoom(100,100).html|raw }}</a>
     </div>
+  {% else %}
+    <div class="search-image">
+      <a href="{{ page.url }}">
+        <img src="{{ theme_url }}/images/after_logo_100.png"></img>
+      </a>
+    </div>
+  {% endif %}
+
+  <div class="search-item">
+    <div class="search-title">
+      <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+    </div>
+
+    <div class="search-details">
+      <p><i class="fa {{ theme_var('fa_icons_date') }}" title="Date"></i>
+        <span class="tags">
+        <a href="{{ base_url_absolute }}/archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives: {{ page.date|date("F Y") }}">{{ page.date|date("d/m/Y") }}</a>
+        </span>
+      </p>
+      <p><i class="fa {{ theme_var('fa_icons_author') }}" title="Author"></i>
+        <span class="tags">
+        <a href="{{ blog.url }}{{ base_url }}about">
+        {% if page.author %}
+          {{ page.author }}
+        {% else %}
+          {{ config.site.author.name }}
+        {% endif %}
+        </a>
+        </span>
+      </p>
+
+      {% if config.plugins.taxonomylist.enabled %}
+        <p><i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
+          {% if page.taxonomy.category %}
+            <span class="tags">
+            {% for cat in page.taxonomy.category %}
+              <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
+            {% endfor %}
+            </span>
+          {% else %}
+            Uncategorized
+          {% endif %}
+        </p>
+        <p><i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>
+          {% if page.taxonomy.tag %}
+            <span class="tags">
+            {% for tag in page.taxonomy.tag|sort %}
+              <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+            </span>
+          {% else %}
+            No TAGs
+          {% endif %}
+        </p>
+      {% endif %}
+
+    {% if config.plugins.readingtime.enabled %}
+      <div><span class="item_short_icon"><i class="fa {{ theme_var('fa_icons_readingtime') }}" title="Reading Time"></i></span>
+        <span class="tags">
+        <a href="{{ page.url }}">{{ page.content|readingtime({'format': '{minutes_short_count} {minutes_text}'}) }}</a>
+        </span>
+      </div>
+    {% endif %}
+
+    <div>
+      <a href="#"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    </div>
+  <hr class="hr-search-result" />
+  </div>
 </section>
