@@ -24,23 +24,26 @@
 			{% include 'partials/breadcrumbs.html.twig' %}
 		{% endif %}
 
-{% include 'partials/info_bar.html.twig' %}
+		{% include 'partials/info_bar.html.twig' %}
 
 
 		<div class="blog-content-list grid pure-g">
 			<div id="listing" class="block pure-u-2-3">
 
 			<div class="list-item">
-			{% for child in collection %}
-
-			{% if uri.param('tag') or uri.param('category') or uri.param('archives_month') %}
-
-			{% include 'partials/blog_item_short.html.twig' with {'page':child} %}
-
-			{% else %}
-			{% include 'partials/blog_item.html.twig' with {'page':child} %}
-			{% endif %}
-			{% endfor %}
+				{% set item_count = 0 %}
+				{% for child in collection %}
+					{% if uri.param('tag') or uri.param('category') or uri.param('archives_month') or uri.param('archives_year') or uri.param('page') %}
+						{% include 'partials/blog_item_short.html.twig' with {'page':child} %}
+					{% else %}
+						{% set item_count = item_count + 1 %}
+						{% if item_count <= {{ theme_var('show_blog_item') }} %}
+							{% include 'partials/blog_item.html.twig' with {'page':child} %}
+						{% else %}
+							{% include 'partials/blog_item_short.html.twig' with {'page':child} %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
 			</div>
 
                 {% block pagination %}

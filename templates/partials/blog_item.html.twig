@@ -14,13 +14,15 @@
 		  {% else %}
 		    {{ config.site.author.name }}
 		  {% endif %}
-      </a> in
-      {% if page.taxonomy.category %}
-	     {% for cat in page.taxonomy.category %}
-       <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
-       {% endfor %}
-      {% else %}
+      </a>
+      {% if config.plugins.taxonomylist.enabled %}
+        {% if page.taxonomy.category %} in
+	        {% for cat in page.taxonomy.category %}
+          <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
+          {% endfor %}
+        {% else %}
       Uncategorized
+        {% endif %}
       {% endif %}
       </div>
 
@@ -41,26 +43,28 @@
   <a href="{{ blog.url }}archives_month{{ config.system.param_sep }}{{ page.date|date("M_Y")|lower }}" title="Archives:{{ page.date|date("M_Y")|lower }}">{{ page.date|date("d/m/Y") }}</a>
 </span>
 
-<i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
-{% if page.taxonomy.category %}
-	<span class="tags">
-    {% for cat in page.taxonomy.category %}
-        <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
-    {% endfor %}
-    </span>
-{% else %}
-    Uncategorized
-{% endif %}
+{% if config.plugins.taxonomylist.enabled %}
+    <i class="fa {{ theme_var('fa_icons_category') }}" title="Category"></i>
+    {% if page.taxonomy.category %}
+    	<span class="tags">
+        {% for cat in page.taxonomy.category %}
+            <a href="{{ base_url_absolute }}/category{{ config.system.param_sep }}{{ cat }}">{{ cat }}</a>
+        {% endfor %}
+        </span>
+    {% else %}
+        Uncategorized
+    {% endif %}
 
-<i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>
-{% if page.taxonomy.tag %}
-    <span class="tags">
-    {% for tag in page.taxonomy.tag|sort %}
-    <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-    {% endfor %}
-    </span>
-{% else %}
-    No TAGs
+    <i class="fa {{ theme_var('fa_icons_tag') }}" title="TAGs"></i>
+    {% if page.taxonomy.tag %}
+        <span class="tags">
+        {% for tag in page.taxonomy.tag|sort %}
+        <a href="{{ base_url_absolute }}/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+        </span>
+    {% else %}
+        No TAGs
+    {% endif %}
 {% endif %}
 
 <i class="fa {{ theme_var('fa_icons_write_author') }}" aria-hidden="true" title="Write to the author"></i>

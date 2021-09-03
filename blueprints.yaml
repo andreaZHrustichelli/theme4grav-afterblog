@@ -1,7 +1,7 @@
 name: Afterblog
 slug: afterblog
 type: theme
-version: 0.8.0
+version: 0.9.0
 description: "Afterblog is modern, responsive, and **built for speed**!"
 icon: paper-plane
 author:
@@ -48,21 +48,20 @@ form:
         1: "Tag style"
         2: "List"
 
-    type_of_search_results:
-      type: toggle
-      label: Visualization type for search results
-      help: Show search result like "Simple Search Plugin" or customized
-      default: 1
-      options:
-        1: "Like Simple Search Plugin"
-        2: "Like AfterBlog's 'Post Detail'"
-
     claim:
       type: text
       label: Site's claim
       help: String with the claim of the site... Show on the top left
       validate:
         type: string
+
+    show_blog_item:
+      type: text
+      label: Number of post to show complete in blog' main page
+      help: Number of post to show complete in blog' main page
+      default: 5
+      validate:
+        type: number
 
     section_fa_icons:
       type: section
@@ -73,13 +72,15 @@ form:
       type: text
       label: Font Awesome icon for Author
       help: Write the FA code for Author
+      default: fa-user
       validate:
         type: string
 
     fa_icons_date:
       type: text
       label: Font Awesome icon for Date
-      help: Write the FA code for Author
+      help: Write the FA code for fa_icons_date
+      default: fa-calendar
       validate:
         type: string
 
@@ -87,6 +88,7 @@ form:
       type: text
       label: Font Awesome icon for Category
       help: Write the FA code for Category
+      default: fa-file-text
       validate:
         type: string
 
@@ -94,6 +96,15 @@ form:
       type: text
       label: Font Awesome icon for TAGs
       help: Write the FA code for TAGs
+      default: fa-tags
+      validate:
+        type: string
+
+    fa_icons_readingtime:
+      type: text
+      label: Font Awesome icon for Reading Time (if installed)
+      help: Write the FA code for Reading Time
+      default: fa-clock-o
       validate:
         type: string
 
@@ -109,6 +120,7 @@ form:
       type: text
       label: Font Awesome icon for "Write to the Author"
       help: Write the FA code for "Write to the Author"
+      default: fa-envelope-o
       validate:
         type: string
 
@@ -124,6 +136,7 @@ form:
       type: text
       label: Font Awesome icon for "Suggest the post"
       help: Write the FA code for "Suggest the post"
+      default: fa-bullhorn
       validate:
         type: string
 
@@ -132,45 +145,5 @@ form:
       label: Label for "Suggest the post"
       help: Write the label of button "Suggest the post"
       default: "Suggest the post"
-      validate:
-        type: string
-
-    section_error:
-      type: section
-      underline: true
-      title: Message error
-
-    400_error:
-      type: text
-      label: 400 Error message (Bad request)
-      help: Personalized 400 Error message
-      validate:
-        type: string
-
-    401_error:
-      type: text
-      label: 401 Error message (Unauthorized)
-      help: Personalized 401 Error message
-      validate:
-        type: string
-
-    403_error:
-      type: text
-      label: 403 Error message (Forbidden)
-      help: Personalized 403 Error message
-      validate:
-        type: string
-
-    404_error:
-      type: text
-      label: 404 Error message (Not Found)
-      help: Personalized 404 Error message
-      validate:
-        type: string
-
-    500_error:
-      type: text
-      label: 500 Error message (Internal Server Error)
-      help: Personalized 500 Error message
       validate:
         type: string
