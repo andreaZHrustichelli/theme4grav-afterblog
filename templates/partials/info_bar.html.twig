@@ -37,11 +37,13 @@
     </div>
   </div>
 
-<div id="info_bar_right" class="block size-1-3 pure-u-1-3">
-{% if config.plugins.simplesearch.enabled %}
-<div class="sidebar-content">
-    {% include 'partials/simplesearch_searchbox.html.twig' %}
-</div>
-{% endif %}
-</div>
+  <div id="info_bar_right" class="block size-1-3 pure-u-1-3">
+    <div class="list-item">
+      {% if config.plugins.simplesearch.enabled %}
+        <div class="sidebar-content">
+          {% include 'partials/simplesearch_searchbox.html.twig' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 </div>

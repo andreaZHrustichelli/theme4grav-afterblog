@@ -19,3 +19,12 @@
 #footer {
  height: 10rem;
 }
+
+.search-details {
+    margin-left: 15px;
+}
+
+.item_short_icon {
+    display: inline-block;
+    width: 30px;
+}
