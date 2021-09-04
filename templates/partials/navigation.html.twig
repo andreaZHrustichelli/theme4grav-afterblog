@@ -16,7 +16,7 @@
 {% endmacro %}
 
 <ul class="navigation">
-    {% if theme_config.dropdown.enabled %}
+    {% if theme_config.dropdown.enabled == 1 %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
@@ -41,4 +41,3 @@
         <li><i class="fa fa-lock"></i> {% include 'partials/login-status.html.twig' %}</li>
     {% endif %}
 </ul>
-

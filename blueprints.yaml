@@ -25,8 +25,8 @@ form:
       label: Dropdown in navbar
       default: 0
       options:
-        0: PLUGIN_ADMIN.DISABLED
-        1: PLUGIN_ADMIN.ENABLED
+        0: Disabled
+        1: Enabled
       validate:
         type: bool
 
