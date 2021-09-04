@@ -35,8 +35,8 @@ form:
       label: Show blog content
       default: 0
       options:
-        0: Disable
-        1: Enable
+        0: Disabled
+        1: Enabled
       validate: bool
 
     type_of_categories:
@@ -60,8 +60,7 @@ form:
       label: Number of post to show complete in blog' main page
       help: Number of post to show complete in blog' main page
       default: 5
-      validate:
-        type: number
+      validate: number
 
     section_fa_icons:
       type: section

@@ -14,7 +14,7 @@
 
 {% block content %}
 
-{% if theme_var('show_blog_content') == 2 %}
+{% if theme_var('show_blog_content') == 1 %}
 <div class="blog-header">
 {{ page.content|raw }}
 </div>
@@ -31,7 +31,6 @@
 <div id="listing" class="block pure-u-2-3">
 
 <div class="list-item">
-  Verrano mostrati {{ theme_var('show_blog_content') }} post
 
 {% set item_count = 0 %}
 {% for child in collection %}
@@ -39,7 +38,7 @@
 {% include 'partials/blog_item_short.html.twig' with {'page':child} %}
 {% else %}
 {% set item_count = item_count + 1 %}
-{% if item_count <= theme_var('show_blog_content') %}
+{% if item_count <= theme_var('show_blog_item') %}
 {% include 'partials/blog_item.html.twig' with {'page':child} %}
 {% else %}
 {% include 'partials/blog_item_short.html.twig' with {'page':child} %}
