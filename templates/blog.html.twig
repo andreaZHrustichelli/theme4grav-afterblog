@@ -31,6 +31,8 @@
 <div id="listing" class="block pure-u-2-3">
 
 <div class="list-item">
+  Verrano mostrati {{ theme_var('show_blog_content') }} post
+
 {% set item_count = 0 %}
 {% for child in collection %}
 {% if uri.param('tag') or uri.param('category') or uri.param('archives_month') or uri.param('archives_year') or uri.param('page') %}
