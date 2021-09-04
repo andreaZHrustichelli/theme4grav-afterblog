@@ -3,14 +3,14 @@ slug: afterblog
 type: theme
 version: 0.9.0
 description: "Afterblog is modern, responsive, and **built for speed**!"
-icon: paper-plane
+icon: barcode
 author:
   name: Andrea ZH Rustichelli
   email: andrea@andrea.rustichelli.name
   url: http://www.andrea.rustichelli.name/demo-grav-theme-afterblog
 homepage:
 demo:
-keywords: afterblog, theme, modern, fast, responsive
+keywords: afterblog, blog, theme, modern, fast, responsive
 bugs:
 license: MIT
 
@@ -27,7 +27,7 @@ form:
       options:
         0: Disabled
         1: Enabled
-      
+
     show_blog_content:
       type: toggle
       label: Show blog content
