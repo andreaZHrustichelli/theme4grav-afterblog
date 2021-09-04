@@ -16,7 +16,7 @@
 {% endmacro %}
 
 <ul class="navigation">
-    {% if theme_config.dropdown.enabled == 1 %}
+    {% if theme_var('dropdown.enabled') == 1 %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}

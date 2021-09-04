@@ -27,9 +27,7 @@ form:
       options:
         0: Disabled
         1: Enabled
-      validate:
-        type: bool
-
+      
     show_blog_content:
       type: toggle
       label: Show blog content
@@ -37,7 +35,6 @@ form:
       options:
         0: Disabled
         1: Enabled
-      validate: bool
 
     type_of_categories:
       type: toggle
