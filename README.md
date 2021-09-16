@@ -12,11 +12,15 @@ For a better use of this theme it is recommended to install the following plugin
 - SimpleSearch
 - Taxonomy List
 
+From version 0.9.0 on the main page of the *Blog* are shown completely only the
+first N articles (where N is definable in theme's variable) while all previous
+articles are shown in "compress" or "short" form.
+
 ## Manual Installation
 To install this theme, just download the zip version of this repository and unzip it under /your/site/grav/user/themes. Then, rename the folder to afterblog. You can find these files either on GitHub.
 
-You should now have all the theme files under  
-'/your/site/grav/user/themes/afterblog'  
+You should now have all the theme files under
+'/your/site/grav/user/themes/afterblog'
 NOTE: This theme is a modular component for Grav which requires the Grav, Error and Problems plugins.
 
 ## Manual Installation directly in Grav Admin

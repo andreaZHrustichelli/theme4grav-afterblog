@@ -1,5 +1,5 @@
 # v0.9.0
-## 11/08/2021
+## 16/09/2021
 
 1. [](#new)
     * Added support for *Reading Time* plugin
@@ -11,6 +11,8 @@
     * In page *blog_item.html.twig* added section based on *Taxonomy List* plugin status
 1. [](#change)
     * The rusults of *SimpleSearch* is shown only with *blog_item_shot.html.twig*
+    * Customized some graphic elements of the page *About* in the *afterblog.css* file
+    * Rename some classes within the file *info_bar.html.twig*
 1. [](#remove)
     * Message for internet errors in *blueprints.yaml*
 
