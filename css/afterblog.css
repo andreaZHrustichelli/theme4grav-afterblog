@@ -12,7 +12,7 @@
   margin-right:2rem;
 }
 
-#info_bar_right {
+#info-bar-right {
  padding-left: 3rem;
 }
 
@@ -27,4 +27,17 @@
 .item_short_icon {
     display: inline-block;
     width: 30px;
+}
+
+.list-item img {
+    float: none;
+}
+
+.about-me h4 {
+    border-bottom: none;
+}
+
+.about-me img {
+    float: left;
+    margin-right: 1.5rem;
 }
